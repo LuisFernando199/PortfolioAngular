@@ -1,0 +1,92 @@
+<section class="content">
+    <div class="block-content">
+        <h3 class="block-title">Contact</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+                    <div class="form-control-wrap">
+                        
+                        <div class="form-group">
+                            <input type="text" formControlName="name" placeholder="Your Name">
+                            <div class="alert-danger" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                              <div class="container-error-message" *ngIf="name?.hasError('required')">
+                                Name is required
+                              </div>
+                              <div class="container-error-message" *ngIf="name?.hasError('minlength')">
+                                Name must be at least 5 characters long.
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mar-top-40">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email*" formControlName="email">
+                            <div class="alert-danger" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                                <div class="container-error-message" *ngIf="email?.hasError('required')">
+                                  Email is required
+                                </div>
+                                <div class="container-error-message" *ngIf="email?.hasError('minlength')">
+                                  Email must be at least 5 characters long.
+                                </div>
+                                <div class="container-error-message" *ngIf="(email?.dirty || email?.touched) &&
+                                 email?.invalid && email?.hasError('pattern')">
+                                    Valid has to be a valid email address
+                                  </div>
+                              </div>
+                        </div>
+                        <div class="form-group mar-top-60">
+                            <textarea class="form-control" rows="10" formControlName="message" id="message" placeholder="Your Message"></textarea>
+                            <div class="alert-danger" *ngIf="message?.invalid && (message?.dirty || message?.touched)">
+                                <div class="container-error-message" *ngIf="message?.hasError('required')">
+                                  Message is required
+                                </div>
+                                <div class="container-error-message" *ngIf="message?.hasError('minlength')">
+                                  Message must be at least 10 characters long.
+                                </div>
+                              </div>
+                        </div>
+                        <div class="form-group mar-top-40">
+                            <button type="submit" name="submit" class="btn v7"  [disabled]="!contactForm.valid">Send Message</button>
+                            <div class="alert-primary" *ngIf="contactForm.valid">
+                                <div >
+                                    Message ready to send.
+                                </div>                              
+                              </div>
+                              
+                        </div>
+                    </div>
+                </form>
+            </div>
+  
+            <div class="col-md-5 offset-md-1">
+                <div class="contact-content">
+                    <div class="contact-icon">
+                        <i class="ion-ios-location-outline"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h5>Direction</h5>
+                        <p>Spain, Valencia</p>
+                    </div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-icon">
+                        <i class="ion-ios-telephone-outline"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h5>Telefono</h5>
+                        <p> <a href="tel:+51959747175">+34 - 695394330</a></p>
+                    </div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-icon">
+                        <i class="ion-ios-email-outline"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h5>Email</h5>
+                        <p>luisfermartinez_91@hotmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  

@@ -1,0 +1,154 @@
+<section class="content" id="about">
+    <div class="block-content">
+        <h3 class="block-title">Profile</h3>
+        <h3 class="subheading">Hello! I'm Luis Fernando <strong>Web Application Developer / FrontEnd</strong></h3>
+        <p>Web application development student, and self-taught Angular student.
+
+            I have worked 9 years in the industrial sector as a maintenance electro mechanic.
+            <br>
+            In 2021 I made a professional break, to study IT and recycle myself.
+            
+            Now I am more proactive and eager to learn and grow both in my personal and professional life.</p>
+        <div class="info-list row">
+            <div class="col-sm-6"><span>Name : </span> Luis Fernando</div>
+            <div class="col-sm-6"><span>Date of Birth : </span> December 1, 1991 </div>
+            <div class="col-sm-6"><span>Address : </span> Spain, Valencia.</div>
+            <div class="col-sm-6"><span>Email : </span> luisfermartinez_91@hotmail.com</div>
+            <div class="col-sm-6"><span>Phone : </span> + 34 695394330</div>
+            <div class="col-sm-6"><span>Interests : </span> job search</div>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3 class="block-title">Attitudes</h3>
+        <div *ngFor="let attitu of cv.attitudes">
+          <label class="progress-bar-label">{{ attitu.name }}</label>
+          <div class="progress">
+              <div [style.width.%]=attitu.value class="progress-bar" role="progressbar" attr.aria-valuenow="{{ attitu.value }}" aria-valuemin="0" aria-valuemax="100">
+                  <span>{{ attitu.value }}%</span>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="block-content">
+        <h3 class="block-title">Education</h3>
+        <div class="timeline education">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="exp-holder">
+                      <div *ngFor="let educat of cv.education">
+                        <div class="exp">
+                            <div class="hgroup">
+                                <h4>{{ educat.Description }} | <a href="{{ educat.Url }}" target="_blank"><span style="color: #498dfa">See Certification</span></a></h4>
+                                <h5>{{ educat.Date }}</h5>
+                            </div>
+                            <p>{{ educat.Institute }}</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3 class="block-title">Experience</h3>
+        <div class="timeline experience">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="exp-holder">
+                        <div *ngFor="let experi of cv.experience">
+                          <div class="exp">
+                              <div class="hgroup">
+                                  <h4><span>{{ experi.Company }}</span> - {{ experi.Description }}</h4>
+                                  <h5> {{ experi.Date }} </h5>
+                              </div>
+                              <p>{{ experi.Descripcion }}</p>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3 class="block-title">Certifications</h3>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 awards">
+                 <a href="https://drive.google.com/file/d/1JT7WxhgbJ_e07lfcWh5Nqw7MW8-x-GMH/view?usp=sharing" target="_blank"><h4 style="font-weight: bold; color: #498dfa; cursor: pointer;" > Open Bootcamp </h4></a> 
+            </div>
+            
+        </div>
+    </div> 
+
+   
+  <!--  <div class="block-content">
+        <h3 class="block-title">Servicios</h3>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 service">
+                <div class="service-icon">
+                    <i class="ion-laptop"></i>
+                </div>
+                <h4>Diseño Web</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+            </div>
+            <div class="col-md-4 col-sm-6 service">
+                <div class="service-icon">
+                    <i class="ion-pie-graph"></i>
+                </div>
+                <h4>Desarrollo de Aplicaciones</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+            </div>
+            <div class="col-md-4 col-sm-6 service">
+                <div class="service-icon">
+                    <i class="ion-paintbucket"></i>
+                </div>
+                <h4>Diseño Grafico</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+            </div>
+            <div class="col-md-4 col-sm-6 service">
+                <div class="service-icon">
+                    <i class="ion-printer"></i>
+                </div>
+                <h4>Print Design</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+            </div>
+            <div class="col-md-4 col-sm-6 service">
+                <div class="service-icon">
+                    <i class="ion-qr-scanner"></i>
+                </div>
+                <h4>Graphic Design</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+            </div>
+            <div class="col-md-4 col-sm-6 service">
+                <div class="service-icon">
+                    <i class="ion-social-buffer"></i>
+                </div>
+                <h4>Print Design</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+            </div>
+        </div>
+    </div>
+   
+    <div class="block-content">
+        <h3 class="block-title">Testimonios</h3>
+        <div class="row">
+            <div id="liontestimonial" class="owl-carousel owl-theme">
+                <div *ngFor="let testix of cv.testimonio">
+                  <div class="item testimonials">
+                      <img src="assets\images\testimonials\1.jpeg" alt="">
+                      <blockquote>{{ testix.Descripcion }}
+                          <p class="quote"><span>{{ testix.Nombre }}</span> - {{ testix.Cargo }}</p>
+                      </blockquote>
+                  </div>
+              </div>
+
+            </div>
+        </div>
+    </div>-->
+    <div class="row text-center">
+        <div class="col-md-12 btn-email">
+           
+            <a class="btn lowercase" href="mailto:luisfermartinez_91@hotmail.com">luisfermartinez_91@hotmail.com</a>
+            
+        </div>
+    </div>
+</section>
